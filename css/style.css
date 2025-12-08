@@ -1,0 +1,289 @@
+/* Font Face */
+@font-face {
+    font-family: 'Bubblegum Sans';
+    src: url('../fonts/BubblegumSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CSS Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #5bc0de;
+    --secondary-color: #f0a830;
+    --dark-color: #2c1810;
+    --light-color: #f5f5f5;
+    --accent-color: #e74c3c;
+}
+
+body {
+    font-family: 'Bubblegum Sans', 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+    color: var(--light-color);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 50px;
+    image-rendering: pixelated;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover img {
+    transform: scale(1.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo {
+    max-width: 400px;
+    width: 100%;
+    image-rendering: pixelated;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    max-width: 600px;
+    color: var(--primary-color);
+}
+
+/* About Section */
+.about {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+/* Games Section */
+.games {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.games h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.game-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.game-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.game-card-inner {
+    background: linear-gradient(145deg, #8b6914, #a67c00);
+    border: 4px solid #5c4a1f;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.game-icon {
+    width: 120px;
+    height: 120px;
+    image-rendering: pixelated;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.game-info {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+.game-info h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--light-color);
+}
+
+.game-info p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.game-decorations {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    overflow: hidden;
+}
+
+.decoration {
+    position: absolute;
+    width: 30px;
+    image-rendering: pixelated;
+    right: 10px;
+    bottom: -50px;
+    animation: floatUp 4s linear infinite;
+}
+
+.balloon-red { animation-delay: 0s; }
+.balloon-green { animation-delay: 1.3s; }
+.balloon-yellow { animation-delay: 2.6s; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-250px);
+        opacity: 0;
+    }
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-logo {
+    height: 60px;
+    image-rendering: pixelated;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 280px;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .about h2,
+    .games h2 {
+        font-size: 2rem;
+    }
+
+    .game-card-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-info {
+        text-align: center;
+    }
+
+    .game-decorations {
+        position: static;
+        flex-direction: row;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+}
